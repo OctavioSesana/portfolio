@@ -1,0 +1,131 @@
+// Variables (puedes ajustarlas)
+$bg-section: #ffffff;
+$text-dark: #111827;
+$text-gray: #6b7280;
+$blue-icon-bg: #dbeafe; // Azul muy clarito fondo icono
+$blue-icon-fg: #2563eb; // Azul fuerte icono
+$card-border: #e5e7eb;
+
+.about-section {
+  background-color: $bg-section;
+  padding: 5rem 1.5rem;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+// 1. Encabezado
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  h2 {
+    font-size: 2rem;
+    color: $text-dark;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: $text-gray;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+// 2. Grilla de Tarjetas
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.feature-card {
+  background: white;
+  border: 1px solid $card-border;
+  border-radius: 12px; // Bordes redondeados
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .icon-box {
+    width: 50px;
+    height: 50px;
+    background-color: $blue-icon-bg;
+    border-radius: 12px; // Cuadrado redondeado como en la imagen
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+
+    i {
+      color: $blue-icon-fg;
+      font-size: 1.5rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $text-dark;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    color: $text-gray;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+}
+
+// 3. Información Personal
+.personal-info-container {
+  background-color: #f9fafb; // Un gris muy muy suave de fondo como la imagen
+  padding: 3rem;
+  border-radius: 16px;
+  text-align: center; // Título centrado
+
+  h3 {
+    font-size: 1.5rem;
+    color: $text-dark;
+    margin-bottom: 2rem;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 2 Columnas
+    gap: 2rem 4rem; // Gap vertical y horizontal
+    text-align: left; // Texto alineado a la izquierda
+    max-width: 800px;
+    margin: 0 auto;
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr; // 1 Columna en móvil
+      gap: 1.5rem;
+    }
+  }
+
+  .info-item {
+    .label {
+      display: block;
+      font-weight: 700;
+      color: $text-dark;
+      margin-bottom: 0.25rem;
+    }
+    
+    .value {
+      color: $text-gray;
+      font-size: 1.05rem;
+    }
+  }
+}

@@ -1,0 +1,113 @@
+// Variables de color (puedes moverlas a styles.scss global luego)
+$bg-color: #eef2ff; // Ese tono azul lavanda muy suave de tu imagen
+$primary-color: #000000; // Botón negro
+$text-color: #1f2937; // Gris oscuro para texto
+$accent-blue: #3b82f6; // Azul brillante para el avatar
+
+.hero-section {
+  background-color: $bg-color;
+  min-height: 80vh; // Altura considerable pero no pantalla completa forzada
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  font-family: 'Inter', system-ui, sans-serif; // Tipografía limpia
+}
+
+.container {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// El círculo azul degradado con las iniciales
+.avatar-circle {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+
+  .initials {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #111827;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: none;
+    font-size: 0.95rem;
+
+    &:hover { transform: translateY(-2px); }
+  }
+
+  .btn-primary {
+    background-color: $primary-color;
+    color: white;
+    // Sombra suave negra
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-secondary {
+    background-color: white;
+    color: $text-color;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid transparent;
+
+    &:hover {
+      border-color: #e5e7eb;
+      background-color: #f9fafb;
+    }
+  }
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  
+  a {
+    color: #6b7280;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+
+    &:hover { color: #111827; }
+  }
+}
+
+.social-icons a:hover .fa-whatsapp {
+  color: #25D366; // El verde oficial de WhatsApp
+  transform: scale(1.1); // Un pequeño efecto de zoom
+}
