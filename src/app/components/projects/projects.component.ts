@@ -23,16 +23,16 @@ export class ProjectsComponent {
       description: 'Sistema de gestión de empleados, equipos y partidos, desarrollado en C# con WinForms y SQL Server. - Rol: Fullstack (arquitectura multicapa, Entity Framework, persistencia de datos). - Tecnologías: C#, .NET, Entity Framework, SQL Server.',
       tags: ['C#', '.NET', 'Entity Framework', 'SQL Server'],
       image: 'assets/images/footballGo.png',
-      demoUrl: '', // Si está vacío, ocultaremos el botón en el HTML
+      demoUrl: '',
       codeUrl: 'https://github.com/OctavioSesana/TPI---FootballGo'
     },
     {
-      title: 'App Clima - Python',
-      description: 'Aplicación de escritorio en Python que consulta la API de OpenWeatherMap y muestra en tiempo real el clima de cualquier ciudad (nombre, temperatura y descripción). - Rol: Desarrollo completo (frontend en Tkinter + backend consumo API).',
-      tags: ['Python', 'Tkinter', 'API'],
-      image: 'assets/images/app-clima.png',
-      demoUrl: '',
-      codeUrl: ''
+      title: 'FinTrack - Gestor de Finanzas Personales',
+      description: 'Aplicación web para la gestión de finanzas personales que permite registrar ingresos y gastos, visualizar balances y analizar transacciones por usuario autenticado. Incluye sistema de autenticación, manejo de sesiones y dashboard dinámico con métricas financieras. Desarrollado con Angular en el frontend y Node.js con base de datos relacional en el backend.',
+      tags: ['Angular', 'Node.js', 'MySQL', 'Express', 'TypeScript'],
+      image: 'assets/images/fin-track.png',
+      demoUrl: 'https://finance-tracker-1ufhvtjwr-octavios-projects-0e658b85.vercel.app/login',
+      codeUrl: 'https://github.com/OctavioSesana/finance-tracker'
     }
   ];
 }
