@@ -1,32 +1,50 @@
 <section id="about" class="about-section">
-  <div class="container">
-    
+  <div class="about-container">
+
+    <!-- Header -->
     <div class="section-header">
-      <h2>Sobre Mí</h2>
-      <p>
-        Soy un estudiante avanzado de Ingeniería en Sistemas (UTN) apasionado por el desarrollo de software.
-        Me especializo en tecnologías modernas y busco siempre aportar soluciones innovadoras, 
-        desde la simulación de procesos hasta el desarrollo Full Stack.
+      <span class="section-badge"><i class="fas fa-star"></i> Sobre Mí</span>
+      <h2 class="section-title">Creando Experiencias <span class="gradient-text">Digitales</span></h2>
+      <p class="section-desc">
+        Desarrollador Full Stack con pasión por transformar ideas complejas en
+        <span class="highlight">interfaces elegantes</span> y <span class="highlight">experiencias memorables</span>.
       </p>
     </div>
 
-    <div class="cards-grid">
-      <div class="feature-card" *ngFor="let item of features">
-        <div class="icon-box">
-          <i class="fas" [ngClass]="item.icon"></i>
-        </div>
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.desc }}</p>
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card" *ngFor="let stat of stats">
+        <span class="stat-number gradient-text">{{ stat.number }}</span>
+        <span class="stat-label">{{ stat.label }}</span>
+        <span class="stat-sub">{{ stat.sub }}</span>
       </div>
     </div>
 
-    <div class="personal-info-container">
-      <h3>Información Personal</h3>
-      
+    <!-- Skills cards -->
+    <div class="skills-grid">
+      <div class="skill-card" *ngFor="let skill of skills">
+        <div class="skill-header">
+          <div class="skill-icon" [style.background]="skill.iconBg">
+            <i class="fas" [ngClass]="skill.icon"></i>
+          </div>
+          <div>
+            <h3>{{ skill.title }}</h3>
+            <div class="skill-divider" [style.background]="skill.dividerColor"></div>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag" *ngFor="let tag of skill.tags">{{ tag }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info personal -->
+    <div class="info-card">
+      <h3 class="info-title"><i class="fas fa-globe"></i> Información Personal</h3>
       <div class="info-grid">
         <div class="info-item" *ngFor="let info of personalInfo">
-          <span class="label">{{ info.label }}:</span>
-          <span class="value">{{ info.value }}</span>
+          <span class="info-label">{{ info.label }}</span>
+          <span class="info-value"><span class="info-dot"></span>{{ info.value }}</span>
         </div>
       </div>
     </div>

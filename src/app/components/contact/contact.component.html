@@ -1,60 +1,55 @@
 <section id="contact" class="contact-section">
-  <div class="container">
-    
+  <div class="contact-container">
+
     <div class="section-header">
-      <h2>Contacto</h2>
-      <p>¿Tienes un proyecto en mente? No dudes en contactarme.</p>
+      <span class="section-badge"><i class="fas fa-paper-plane"></i> Contacto</span>
+      <h2 class="section-title">Trabajemos <span class="gradient-text">Juntos</span></h2>
+      <p class="section-desc">¿Tenés un proyecto en mente? Estoy aquí para ayudarte a hacerlo realidad.</p>
     </div>
 
     <div class="contact-grid">
-      
+
+      <!-- Info -->
       <div class="contact-info">
         <h3>Información de Contacto</h3>
-        
-        <div class="info-item">
-          <div class="icon-box"><i class="fas fa-envelope"></i></div>
-          <div>
-            <span class="label">Email</span>
-            <a href="mailto:octasesana@gmail.com" class="value">octasesana@gmail.com</a>
-          </div>
-        </div>
 
-        <div class="info-item">
-          <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="info-item" *ngFor="let item of contactItems">
+          <div class="info-icon" [style.background]="item.iconBg">
+            <i class="fas" [ngClass]="item.icon"></i>
+          </div>
           <div>
-            <span class="label">Ubicación</span>
-            <span class="value">Rosario, Argentina</span>
+            <span class="info-label">{{ item.label }}</span>
+            <span class="info-value">{{ item.value }}</span>
           </div>
         </div>
 
         <div class="availability-card">
-          <h4>Disponibilidad</h4>
-          <p>
-            Actualmente disponible para proyectos freelance y oportunidades laborales part-time.
-          </p>
+          <div class="avail-dot"></div>
+          <div>
+            <p class="avail-title">Disponible para nuevos proyectos</p>
+            <p class="avail-desc">Actualmente acepto proyectos freelance y colaboraciones. Tiempo de respuesta promedio: 24-48 horas.</p>
+          </div>
         </div>
       </div>
 
+      <!-- Formulario -->
       <div class="contact-form-wrapper">
-        <h3>Envíame un Mensaje</h3>
-        
         <form (ngSubmit)="submitForm()" class="contact-form">
           <div class="form-group">
             <label for="name">Nombre</label>
             <input type="text" id="name" name="name" [(ngModel)]="formData.name" placeholder="Tu nombre" required>
           </div>
-
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" [(ngModel)]="formData.email" placeholder="tu@email.com" required>
           </div>
-
           <div class="form-group">
             <label for="message">Mensaje</label>
-            <textarea id="message" name="message" rows="4" [(ngModel)]="formData.message" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+            <textarea id="message" name="message" rows="5" [(ngModel)]="formData.message" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
           </div>
-
-          <button type="submit" class="btn-submit">Enviar Mensaje</button>
+          <button type="submit" class="btn-submit">
+            Enviar Mensaje <i class="fas fa-paper-plane"></i>
+          </button>
         </form>
       </div>
 

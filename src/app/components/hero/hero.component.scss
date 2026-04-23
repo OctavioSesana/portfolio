@@ -1,113 +1,229 @@
-// Variables de color (puedes moverlas a styles.scss global luego)
-$bg-color: #eef2ff; // Ese tono azul lavanda muy suave de tu imagen
-$primary-color: #000000; // Botón negro
-$text-color: #1f2937; // Gris oscuro para texto
-$accent-blue: #3b82f6; // Azul brillante para el avatar
-
 .hero-section {
-  background-color: $bg-color;
-  min-height: 80vh; // Altura considerable pero no pantalla completa forzada
+  position: relative;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 4rem 1rem;
-  font-family: 'Inter', system-ui, sans-serif; // Tipografía limpia
+  overflow: hidden;
+  background: var(--bg-primary);
 }
 
-.container {
-  max-width: 700px;
+.hero-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.glow-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(168,85,247,0.5) 0%, transparent 70%);
+  top: -150px;
+  left: -100px;
+  animation: float1 8s ease-in-out infinite;
+}
+
+.glow-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(34,211,238,0.4) 0%, transparent 70%);
+  bottom: -100px;
+  right: -80px;
+  animation: float2 10s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translate(0,0); }
+  50% { transform: translate(40px, 30px); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translate(0,0); }
+  50% { transform: translate(-30px, -40px); }
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 6rem 2rem 2rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-name {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  line-height: 0.88;
+  margin-bottom: 1.5rem;
+  overflow: visible;
 }
 
-// El círculo azul degradado con las iniciales
-.avatar-circle {
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+.name-line {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  display: block;
+  white-space: nowrap;
 
-  .initials {
-    color: white;
-    font-size: 2.5rem;
-    font-weight: 500;
+  @media (max-width: 480px) {
+    font-size: clamp(2.8rem, 13vw, 4.5rem);
     letter-spacing: -1px;
   }
 }
 
-h1 {
-  font-size: 2.5rem;
-  color: #111827;
-  margin-bottom: 1rem;
-  font-weight: 700;
+.gradient-text {
+  background: linear-gradient(135deg, #e040fb 0%, #a855f7 60%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.subtitle {
-  font-size: 1.125rem;
-  color: #4b5563;
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
-  max-width: 600px;
+.gradient-text-2 {
+  background: linear-gradient(135deg, #a855f7 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.actions {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+.hero-role {
+  font-size: clamp(0.95rem, 2vw, 1.25rem);
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.02em;
+}
 
-  .btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
+.hero-desc {
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+
+  .highlight {
+    color: var(--purple);
     font-weight: 500;
-    cursor: pointer;
-    transition: transform 0.2s;
-    border: none;
-    font-size: 0.95rem;
-
-    &:hover { transform: translateY(-2px); }
-  }
-
-  .btn-primary {
-    background-color: $primary-color;
-    color: white;
-    // Sombra suave negra
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .btn-secondary {
-    background-color: white;
-    color: $text-color;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    border: 1px solid transparent;
-
-    &:hover {
-      border-color: #e5e7eb;
-      background-color: #f9fafb;
-    }
   }
 }
 
-.social-icons {
+.hero-actions {
   display: flex;
-  gap: 1.5rem;
-  
-  a {
-    color: #6b7280;
-    font-size: 1.5rem;
-    transition: color 0.3s;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
 
-    &:hover { color: #111827; }
+.btn-primary {
+  background: var(--gradient-btn);
+  color: white;
+  border: none;
+  padding: 0.85rem 2rem;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 25px rgba(168,85,247,0.35);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 40px rgba(168,85,247,0.55);
   }
 }
 
-.social-icons a:hover .fa-whatsapp {
-  color: #25D366; // El verde oficial de WhatsApp
-  transform: scale(1.1); // Un pequeño efecto de zoom
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.85rem 2rem;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--purple);
+    background: rgba(168,85,247,0.08);
+    transform: translateY(-3px);
+  }
+}
+
+.hero-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.social-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    border-color: var(--purple);
+    color: var(--purple);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(168,85,247,0.3);
+  }
+}
+
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  span {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+  }
+}
+
+.scroll-mouse {
+  width: 24px;
+  height: 38px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.scroll-wheel {
+  width: 4px;
+  height: 8px;
+  background: var(--purple);
+  border-radius: 2px;
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: 0.4; }
 }

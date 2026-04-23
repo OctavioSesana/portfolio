@@ -1,15 +1,59 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>PortfolioOctavio</title>
+  <title>Octavio Sesana | Full Stack Developer</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='16 18 22 12 16 6'%3E%3C/polyline%3E%3Cpolyline points='8 6 2 12 8 18'%3E%3C/polyline%3E%3C/svg%3E">
+  <meta name="description" content="Portfolio de Octavio Sesana, Desarrollador Full Stack especializado en Angular, Node.js y experiencias web modernas.">
 
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a855f7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='16 18 22 12 16 6'%3E%3C/polyline%3E%3Cpolyline points='8 6 2 12 8 18'%3E%3C/polyline%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<script>
+  const dot  = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+  let ringX = 0, ringY = 0;
+  let mouseX = 0, mouseY = 0;
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left = mouseX + 'px';
+    dot.style.top  = mouseY + 'px';
+  });
+
+  // El ring sigue con lag suave
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.12;
+    ringY += (mouseY - ringY) * 0.12;
+    ring.style.left = ringX + 'px';
+    ring.style.top  = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  // Hover sobre interactivos
+  const interactives = 'a, button, [class*="btn"], input, textarea';
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest(interactives)) {
+      dot.classList.add('hovered');
+      ring.classList.add('hovered');
+    }
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest(interactives)) {
+      dot.classList.remove('hovered');
+      ring.classList.remove('hovered');
+    }
+  });
+</script>
 <body>
   <app-root></app-root>
 </body>

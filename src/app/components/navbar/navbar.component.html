@@ -1,0 +1,40 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="nav-container">
+
+    <a class="nav-logo" href="#inicio">
+      <div class="logo-icon"><span>&lt;/&gt;</span></div>
+      <span class="logo-text">Octavio Sesana</span>
+    </a>
+
+    <div class="nav-badge">
+      <span class="badge-dot"></span>
+      Disponible para proyectos freelance
+    </div>
+
+    <div class="nav-links">
+      <a href="#inicio" class="nav-link" [class.active]="activeSection === 'inicio'">
+        <i class="fas fa-home"></i> Inicio
+      </a>
+      <a href="#about" class="nav-link" [class.active]="activeSection === 'about'">
+        <i class="fas fa-user"></i> Sobre Mí
+      </a>
+      <a href="#portfolio" class="nav-link" [class.active]="activeSection === 'portfolio'">
+        <i class="fas fa-briefcase"></i> Proyectos
+      </a>
+      <a href="#contact" class="nav-link nav-link-cta" [class.active]="activeSection === 'contact'">
+        <i class="fas fa-envelope"></i> Contacto
+      </a>
+    </div>
+
+    <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" [class.open]="menuOpen">
+    <a href="#inicio" class="mobile-link" (click)="closeMenu()"><i class="fas fa-home"></i> Inicio</a>
+    <a href="#about" class="mobile-link" (click)="closeMenu()"><i class="fas fa-user"></i> Sobre Mí</a>
+    <a href="#portfolio" class="mobile-link" (click)="closeMenu()"><i class="fas fa-briefcase"></i> Proyectos</a>
+    <a href="#contact" class="mobile-link" (click)="closeMenu()"><i class="fas fa-envelope"></i> Contacto</a>
+  </div>
+</nav>

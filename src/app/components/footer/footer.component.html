@@ -1,13 +1,52 @@
 <footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <span class="copyright">© 2026 Octavio. Todos los derechos reservados.</span>
-      
-      <div class="social-links">
-        <a href="https://github.com/OctavioSesana" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/octavio-sesana-0a1918236/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:octasesana@gmail.com"><i class="fas fa-envelope"></i></a>
+  <div class="footer-container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon"><span>&lt;/&gt;</span></div>
+          <div>
+            <span class="logo-name">Octavio Sesana</span>
+            <span class="logo-sub">Creative Developer</span>
+          </div>
+        </div>
+        <p class="footer-desc">Transformando ideas en experiencias digitales extraordinarias.</p>
+        <div class="footer-socials">
+          <a href="https://github.com/OctavioSesana" target="_blank" class="social-btn" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/octavio-sesana-0a1918236/" target="_blank" class="social-btn" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:octasesana@gmail.com" class="social-btn" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
       </div>
+
+      <!-- Quick links -->
+      <div class="footer-links">
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre Mí</a></li>
+          <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Proyectos</a></li>
+          <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="footer-cta">
+        <h4>¿Tenés un proyecto?</h4>
+        <p>Estoy disponible para nuevos proyectos y colaboraciones.</p>
+        <a href="#contact" class="btn-cta">Hablemos <i class="fas fa-arrow-up-right-from-square"></i></a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Octavio Sesana. Todos los derechos reservados.</span>
+      <button class="back-top" (click)="scrollToTop()">Volver arriba <i class="fas fa-arrow-up"></i></button>
     </div>
   </div>
 </footer>
