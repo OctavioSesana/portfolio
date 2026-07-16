@@ -11,6 +11,14 @@ import { CommonModule } from '@angular/common';
 export class ProjectsComponent {
   projects = [
     {
+      title: 'YoBorracho - Conductor Designado',
+      description: 'Plataforma web que conecta usuarios con conductores designados: pedís un conductor, viene hasta vos y te lleva a tu casa manejando tu propio auto. Incluye tracking en vivo por WebSockets, geolocalización y cálculo de rutas con Google Maps, precio fijo por viaje y autenticación con JWT. - Rol: Fullstack. - Tecnologías: React, Node.js, PostgreSQL, Socket.io, Docker.',
+      tags: ['React', 'Node.js', 'PostgreSQL', 'Socket.io', 'Docker'],
+      image: 'assets/images/yoborracho.png',
+      demoUrl: 'https://yoborracho-api-frontend.onrender.com/splash',
+      codeUrl: 'https://github.com/OctavioSesana/yoborracho-api'
+    },
+    {
       title: 'Sistema de Gestión de Canchas Deportivas',
       description: 'Plataforma web para reservar canchas de fútbol. Incluye login de usuarios, gestión de reservas, ABM de canchas y estados. - Rol: Fullstack (Angular + NodeJS con MySQL).- Tecnologías: Angular, TypeScript, NodeJS, MikroORM, MySQL.',
       tags: ['Angular', 'Node.js', 'MySQL', 'Express', 'TypeScript'],
