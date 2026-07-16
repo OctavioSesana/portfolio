@@ -15,7 +15,7 @@ export class ProjectsComponent {
       description: 'Plataforma web que conecta usuarios con conductores designados: pedís un conductor, viene hasta vos y te lleva a tu casa manejando tu propio auto. Incluye tracking en vivo por WebSockets, geolocalización y cálculo de rutas con Google Maps, precio fijo por viaje y autenticación con JWT. - Rol: Fullstack. - Tecnologías: React, Node.js, PostgreSQL, Socket.io, Docker.',
       tags: ['React', 'Node.js', 'PostgreSQL', 'Socket.io', 'Docker'],
       image: 'assets/images/yoborracho.png',
-      demoUrl: 'https://yoborracho-api-frontend.onrender.com/splash',
+      demoUrl: 'https://yoborracho-api-frontend.onrender.com',
       codeUrl: 'https://github.com/OctavioSesana/yoborracho-api'
     },
     {
